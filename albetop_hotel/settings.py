@@ -27,6 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'rooms',
+    'book',
+    'customer',
 ]
 
 MIDDLEWARE = [
@@ -65,8 +67,12 @@ WSGI_APPLICATION = 'albetop_hotel.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'hotel',
+        'USER': 'root',
+        'PASSWORD': '0546541122Ob',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
