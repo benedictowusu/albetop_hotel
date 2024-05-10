@@ -83,7 +83,7 @@
         action="{% url 'customer:login' %}"
         method="post"
       >
-        {% csrf_token %} {{ form }} {% if request.GET.next %}
+        {% csrf_token %} {{ loginform }} {% if request.GET.next %}
         <input
           type="hidden"
           name="next"

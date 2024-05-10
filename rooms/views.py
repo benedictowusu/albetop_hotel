@@ -9,3 +9,6 @@ def vip(request):
 
 def standard(request):
     return render(request, 'standard.html')
+
+def room(request):
+    return render(request, 'room.html')
