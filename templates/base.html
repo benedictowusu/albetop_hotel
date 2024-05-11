@@ -8,33 +8,31 @@
       content="width=device-width, initial-scale=1.0"
     />
     <title>Document</title>
-    <style>
-      .roomintro {
-        background-image: url("/static/suite1.jpg");
-        background-repeat: no-repeat;
-      }
-      .roomh1 {
-        font-size: 50px;
-        text-align: center;
-      }
-      .roompara {
-        text-align: center;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="{% static 'styles.css' %}"
+    />
+    <script
+      src="https://kit.fontawesome.com/9fb02a6b6b.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <nav>
-      <div>
-        <div class="logo">Albertop Hotel</div>
+      <div class="navbar">
+        <div class="logo">
+          <a href="{% url 'home:home' %}">Albertop Hotel</a>
+        </div>
         <div>
           <span class="signin">
             <a href="{% url 'customer:login' %}">Sign in</a> </span
-          ><span class="book"><a href="">Book now</a></span>
+          ><span class="book"
+            ><a href="{% url 'rooms:rooms' %}">Book now</a></span
+          >
         </div>
       </div>
     </nav>
     <div>{% block home %} {% endblock %}</div>
-    <div>{% block navbar %} {% endblock %}</div>
     <div>{% block rooms %} {% endblock %}</div>
   </body>
 </html>

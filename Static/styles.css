@@ -1,3 +1,27 @@
-.roomintro{
-    background-color: rgb(203, 37, 37);
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+.logo a {
+  font: 30px bolder;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-decoration: none;
+  color: blue;
+  text-shadow: 10px;
+}
+.roomintro {
+  background-image: url("/static/suite1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 748px;
+}
+.roomh1 {
+  font: 50px bolder;
+  font-family: "Georgia", Times, serif;
+  padding: 60px 0;
+  text-align: center;
+}
+.roompara {
+  text-align: center;
+  font: 30px normal;
 }

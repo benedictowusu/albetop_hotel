@@ -1,14 +1,18 @@
 from django.shortcuts import render
+from .models import Suite, Standard, VIP
 
 # Create your views here.
 def suite(request):
-    return render(request, 'suite.html' )
+    suiteroom = Suite.objects.all()
+    return render(request, 'suite.html', {'suiterooms': suiteroom} )
 
 def vip(request):
-    return render(request, 'vip.html')
+    viproom = VIP.objects.all()
+    return render(request, 'vip.html', {'viprooms': viproom})
 
 def standard(request):
-    return render(request, 'standard.html')
+    standardroom = Standard.objects.all()
+    return render(request, 'standard.html', {'standardrooms': standardroom})
 
 def room(request):
     return render(request, 'room.html')
