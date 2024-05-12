@@ -2,7 +2,8 @@ from django.db import models
 
 # Create your models here.
 class Suite(models.Model):
-    name = models.CharField(max_length=100, default="Suite")
+    name = models.CharField(max_length=100)
+    numofSuites = models.IntegerField(default=0)
     pricepernight = models.IntegerField(default=2500)
     numberofmasterbedrooms = models.IntegerField(default=1)
     typeofbedinmastersbedroom = models.CharField(max_length=100, default="King size bed")
@@ -14,7 +15,13 @@ class Suite(models.Model):
 
     def __str__(self):
         return self.name
-
+    
+    @staticmethod
+    def suiterooms():
+        for i in range(20):
+            Suite.objects.create(
+                name=f"Suite Room {i+1}"
+            )
 
 class VIP(models.Model):
     name = models.CharField(max_length=100)
@@ -30,6 +37,12 @@ class VIP(models.Model):
     def __str__(self):
         return self.name
     
+    @staticmethod
+    def viprooms():
+        for i in range(100):
+            VIP.objects.create(
+                name=f"VIP Room {i+1}"
+            )
 
 class Standard(models.Model):
     name = models.CharField(max_length=100)
@@ -40,3 +53,9 @@ class Standard(models.Model):
 
     def __str__(self):
         return self.name
+    
+    @staticmethod
+    def standardRooms():
+        for i in range(200):
+            Standard.objects.create(
+                name=f'Standard Room {i+1}')

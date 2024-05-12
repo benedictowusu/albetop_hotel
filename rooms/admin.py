@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Suite, VIP, Standard
+from .models import VIP, Standard,Suite
 
 # Register your models here.
 admin.site.register(Suite)
