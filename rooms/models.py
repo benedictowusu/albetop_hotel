@@ -20,8 +20,9 @@ class Suite(models.Model):
     def suiterooms():
         for i in range(20):
             Suite.objects.create(
-                name=f"Suite Room {i+1}"
-            )
+                name=f"Suite Room {i+1}")
+        return Suite.objects.count()
+
 
 class VIP(models.Model):
     name = models.CharField(max_length=100)
@@ -41,8 +42,9 @@ class VIP(models.Model):
     def viprooms():
         for i in range(100):
             VIP.objects.create(
-                name=f"VIP Room {i+1}"
-            )
+                name=f"VIP Room {i+1}")
+        return VIP.objects.count()
+
 
 class Standard(models.Model):
     name = models.CharField(max_length=100)
