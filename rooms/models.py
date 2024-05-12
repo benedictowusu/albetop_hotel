@@ -59,3 +59,4 @@ class Standard(models.Model):
         for i in range(200):
             Standard.objects.create(
                 name=f'Standard Room {i+1}')
+        return Standard.objects.count()
