@@ -1,15 +1,16 @@
 {% extends 'base.html' %}{% block rooms %}
 <div class="roomintro">
   <div class="roomh1"><h1>Rooms & Suites</h1></div>
-  <div class="roompara">
-    <p>
-      Our stylish rooms and suites offer the very best in <br />
-      comfort and privacy.
-    </p>
-  </div>
 </div>
+<div class="roompara">
+  <p>
+    Our stylish rooms and suites offer the very best in <br />
+    comfort and privacy.
+  </p>
+</div>
+<hr />
 <div>
-  <div style="margin: 10px 0 0 0">
+  <div>
     <div
       style="
         border: 10px solid red;
@@ -26,7 +27,7 @@
         />
       </div>
       <div>
-        <h1 style="text-align: center">Standard Room</h1>
+        <h1 style="text-align: center; font-size: 50px">Standard Rooms</h1>
         <p>
           Step into comfort and convenience with our standard rooms, where every
           stay promises a perfect blend of relaxation and functionality.
@@ -37,15 +38,15 @@
           <hr />
           <p>One bedroom</p>
           <hr />
-          <p>${{ standard.stnadardRooms }} per night</p>
+          <p>${{ standardRooms.pricepernight }} per night</p>
         </div>
-        <div style="margin-top: 100%">
+        <div style="margin-top: 35%; text-align: center">
           <a
             style="
               text-decoration: none;
               border: 2px solid black;
               margin: 20px;
-              padding: 20px;
+              padding: 20px 40px;
             "
             href="{% url 'rooms:standard' %}"
             >More Details</a

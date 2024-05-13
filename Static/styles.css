@@ -1,3 +1,4 @@
+/* navbar design */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -18,10 +19,12 @@
 .roomh1 {
   font: 50px bolder;
   font-family: "Georgia", Times, serif;
-  padding: 60px 0;
+  line-height: 200px;
+  height: 200px;
   text-align: center;
 }
 .roompara {
   text-align: center;
   font: 30px normal;
+  padding: 100px;
 }
