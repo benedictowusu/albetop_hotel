@@ -1,2 +1,50 @@
-<span><i class="fa-solid fa-users"></i></span>
-          <span><i class="fa-solid fa-bed"></i></span>
+{% extends 'base.html' %}{% block standard %}
+<div
+  style="
+    background-image: url('/static/standardroom.avif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 700px;
+  "
+>
+  <div style="background-color: black; height: 700px; opacity: 0.3">
+    <div>
+      <h1
+        style="
+          text-align: center;
+          font-size: 50px;
+          font-weight: bolder;
+          color: rgb(255, 255, 255);
+          padding-top: 250px;
+        "
+      >
+        Standard Room
+      </h1>
+    </div>
+  </div>
+</div>
+<div>
+  <div style="display: flex">
+    <div><h1>Room Description</h1></div>
+    <div>
+      <p>
+        Experience comfort and convenience at Albertop Hotel's standard rooms,
+        featuring plush beds and modern amenities. Refresh in sleek bathrooms
+        with premium toiletries, and relax in a welcoming space adorned with
+        stylish décor. Book your stay today for a simple, comfortable, and
+        memorable experience.
+      </p>
+    </div>
+  </div>
+</div>
+<div style="justify-content: center">
+  <video
+    width="60%"
+    controls
+  >
+    <source src="/static/standard.mp4" />
+    >
+  </video>
+</div>
+{% endblock %}

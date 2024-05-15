@@ -10,6 +10,26 @@
   color: blue;
   text-shadow: 10px;
 }
+/* designing homepage */
+.homehero {
+  background-image: url("/static/hotelhero1.avif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  height: 689px;
+}
+.facilities {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+  transition: 0.3s; /* Transition effect on hover */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #ffffff; /* Background color */
+  padding-top: 50px; /* Padding inside the card */
+  margin: 20px; /* Margin around the card */
+  height: 100px;
+  width: 200px;
+}
+/* designing room page */
 .roomintro {
   background-image: url("/static/suite1.jpg");
   background-repeat: no-repeat;
