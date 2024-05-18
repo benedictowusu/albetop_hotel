@@ -54,7 +54,7 @@ class Standard(models.Model):
     numberofbathrooms = models.IntegerField(default=1)
 
     def __str__(self):
-        return self.name  + "||" + self.pricepernight
+        return self.name
     
     @staticmethod
     def standardRooms():

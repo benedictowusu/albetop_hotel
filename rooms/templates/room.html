@@ -22,7 +22,7 @@
       <div>
         <img
           style="height: 500px; width: 800px"
-          src="/static/standard room.jpg"
+          src="/static/standardroom.avif"
           alt=""
         />
       </div>
@@ -32,13 +32,13 @@
           Step into comfort and convenience with our standard rooms, where every
           stay promises a perfect blend of relaxation and functionality.
         </p>
-
         <div style="display: flex; justify-content: space-between">
-          <p>Up to 3 guests</p>
-          <hr />
-          <p>One bedroom</p>
-          <hr />
-          <p>${{ standard }} per night</p>
+          {% if standardRooms %}
+          <span>{{ standardRooms.typeofbed }}</span>
+          <span>${{ standardRooms.pricepernight }} per night</span>
+          <span>Up to {{ standardRooms.numberofbedrooms }} guest</span>
+
+          {% endif %}
         </div>
         <div style="margin-top: 35%; text-align: center">
           <a
