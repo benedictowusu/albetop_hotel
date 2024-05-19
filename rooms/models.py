@@ -26,7 +26,7 @@ class Suite(models.Model):
 
 class VIP(models.Model):
     name = models.CharField(max_length=100)
-    pricepernight = models.IntegerField(default=100)
+    pricepernight = models.IntegerField(default=1000)
     numberofmasterbedrooms = models.IntegerField(default=1)
     typeofbedinmastersbedroom = models.CharField(max_length=100 ,default="Queen size bed")
     numberofbedrooms = models.IntegerField(default=2)

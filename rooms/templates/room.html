@@ -11,6 +11,7 @@
 <hr />
 <div>
   <div>
+    <!-- Desinging standardroom div on roompage -->
     <div
       style="
         border: 10px solid red;
@@ -37,7 +38,6 @@
           <span>{{ standardRooms.typeofbed }}</span>
           <span>${{ standardRooms.pricepernight }} per night</span>
           <span>Up to {{ standardRooms.numberofbedrooms }} guest</span>
-
           {% endif %}
         </div>
         <div style="margin-top: 35%; text-align: center">
@@ -53,9 +53,95 @@
           >
         </div>
       </div>
+      <!-- Desinging vip room on roompage -->
+    </div>
+    <div
+      style="
+        border: 10px solid red;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+      "
+    >
+      <div>
+        <img
+          style="height: 500px; width: 800px"
+          src="/static/viproom.jpg"
+          alt=""
+        />
+      </div>
+      <div>
+        <h1 style="text-align: center; font-size: 50px">VIP Rooms</h1>
+        <p>
+          Welcome to our exclusive VIP Room, where luxury meets unparalleled
+          comfort. Indulge in a lavish experience with premium amenities,
+          personalized service, and a serene ambiance designed for the
+          discerning traveler.
+        </p>
+        <div style="display: flex; justify-content: space-between">
+          {% if VIProom %}
+          <span>{{ VIProom.typeofbed }}</span>
+          <span>${{ VIProom.pricepernight }} per night</span>
+          <span>Up to {{ VIProom.numberofbedrooms }} guests</span>
+          {% endif %}
+        </div>
+        <div style="margin-top: 35%; text-align: center">
+          <a
+            style="
+              text-decoration: none;
+              border: 2px solid black;
+              margin: 20px;
+              padding: 20px 40px;
+            "
+            href="{% url 'rooms:vip' %}"
+            >More Details</a
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      style="
+        border: 10px solid red;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+      "
+    >
+      <div>
+        <img
+          style="height: 500px; width: 800px"
+          src="/static/suiteroom.jpeg"
+          alt=""
+        />
+      </div>
+      <div>
+        <h1 style="text-align: center; font-size: 50px">Suites</h1>
+        <p>
+          Welcome to our luxurious Suites, where elegance meets comfort in every
+          corner. Indulge in unparalleled sophistication and personalized
+          service for an unforgettable stay.
+        </p>
+        <div style="display: flex; justify-content: space-between">
+          {% if suiteroom %}
+          <span>{{ suiteroom.typeofbed }}</span>
+          <span>${{ suiteroom.pricepernight }} per night</span>
+          <span>Up to {{ suiteroom.numberofbedrooms }} guests</span>
+          {% endif %}
+        </div>
+        <div style="margin-top: 35%; text-align: center">
+          <a
+            style="
+              text-decoration: none;
+              border: 2px solid black;
+              margin: 20px;
+              padding: 20px 40px;
+            "
+            href="{% url 'rooms:suite' %}"
+            >More Details</a
+          >
+        </div>
+      </div>
     </div>
   </div>
-  <div></div>
-  <div></div>
+  {% endblock %}
 </div>
-{% endblock %}

@@ -16,4 +16,6 @@ def standard(request):
 
 def room(request):
     standardroom = Standard.objects.order_by('pricepernight').first()
-    return render(request, 'room.html', {'standardRooms': standardroom})
+    VIProom = VIP.objects.order_by('name').first()
+    suiteroom = Suite.objects.order_by('pricepernight').first()
+    return render(request, 'room.html', {'standardRooms': standardroom, 'VIProom' : VIProom, 'suiteroom' : suiteroom})
