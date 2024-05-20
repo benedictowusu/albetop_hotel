@@ -1,6 +1,11 @@
 {% extends 'base.html' %}{% block rooms %}
 <div class="roomintro">
-  <div class="roomh1"><h1>Rooms & Suites</h1></div>
+  <div
+    class="roomh1"
+    style="padding-top: 150px"
+  >
+    <h1>Rooms & Suites</h1>
+  </div>
 </div>
 <div class="roompara">
   <p>
@@ -14,7 +19,7 @@
     <!-- Desinging standardroom div on roompage -->
     <div
       style="
-        border: 10px solid red;
+        padding: 100px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 50px;
@@ -35,7 +40,6 @@
         </p>
         <div style="display: flex; justify-content: space-between">
           {% if standardRooms %}
-          <span>{{ standardRooms.typeofbed }}</span>
           <span>${{ standardRooms.pricepernight }} per night</span>
           <span>Up to {{ standardRooms.numberofbedrooms }} guest</span>
           {% endif %}
@@ -55,9 +59,10 @@
       </div>
       <!-- Desinging vip room on roompage -->
     </div>
+    <!-- Desinging a VIPROOM on roompage -->
     <div
       style="
-        border: 10px solid red;
+        padding: 100px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 50px;
@@ -80,7 +85,6 @@
         </p>
         <div style="display: flex; justify-content: space-between">
           {% if VIProom %}
-          <span>{{ VIProom.typeofbed }}</span>
           <span>${{ VIProom.pricepernight }} per night</span>
           <span>Up to {{ VIProom.numberofbedrooms }} guests</span>
           {% endif %}
@@ -99,9 +103,10 @@
         </div>
       </div>
     </div>
+    <!-- Desinging a Suiteroom on roompage -->
     <div
       style="
-        border: 10px solid red;
+        padding: 100px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 50px;
@@ -123,7 +128,6 @@
         </p>
         <div style="display: flex; justify-content: space-between">
           {% if suiteroom %}
-          <span>{{ suiteroom.typeofbed }}</span>
           <span>${{ suiteroom.pricepernight }} per night</span>
           <span>Up to {{ suiteroom.numberofbedrooms }} guests</span>
           {% endif %}

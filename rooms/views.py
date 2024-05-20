@@ -7,15 +7,15 @@ def suite(request):
     return render(request, 'suite.html', {'suiterooms': suiteroom} )
 
 def vip(request):
-    viproom = VIP.objects.all()
+    viproom = VIP.objects.all().first()
     return render(request, 'vip.html', {'viprooms': viproom})
 
 def standard(request):
-    standardroom = Standard.objects.all()
-    return render(request, 'standard.html', {'standardrooms': standardroom})
+    standroom = Standard.objects.all().first()
+    return render(request, 'standard.html', {'standard': standroom})
 
 def room(request):
     standardroom = Standard.objects.order_by('pricepernight').first()
     VIProom = VIP.objects.order_by('name').first()
-    suiteroom = Suite.objects.order_by('pricepernight').first()
+    suiteroom = Suite.objects.order_by('numofSuites').first()
     return render(request, 'room.html', {'standardRooms': standardroom, 'VIProom' : VIProom, 'suiteroom' : suiteroom})

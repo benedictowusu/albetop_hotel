@@ -25,8 +25,8 @@
   </div>
 </div>
 <div>
-  <div style="display: flex">
-    <div><h1>Room Description</h1></div>
+  <div style="display: flex; flex-direction: column; justify-content: center">
+    <div><h1 style="text-align: center">Room Description</h1></div>
     <div>
       <p>
         Experience comfort and convenience at Albertop Hotel's standard rooms,
@@ -37,14 +37,37 @@
       </p>
     </div>
   </div>
+  <div style="display: flex; justify-content: center">
+    {% if standard %}
+    <div class="facilities">
+      <div style="display: flex; flex-direction: column">
+        <div style="text-align: center">
+          <i class="fa-solid fa-money-check-dollar"></i>
+        </div>
+        <div style="text-align: center">${{ standard.pricepernight }}</div>
+      </div>
+    </div>
+    <div class="facilities">
+      <div style="display: flex; flex-direction: column">
+        <div style="text-align: center">
+          <i class="fa-solid fa-bed"></i>
+        </div>
+        <div style="text-align: center">{{ standard.typeofbed}}</div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
 </div>
-<div style="justify-content: center">
+<div style="padding: 20px; display: flex; justify-content: center">
   <video
-    width="60%"
+    width="90%"
     controls
   >
     <source src="/static/standard.mp4" />
     >
   </video>
+</div>
+<div>
+  <button>Book Now</button>
 </div>
 {% endblock %}

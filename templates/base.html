@@ -18,22 +18,28 @@
     ></script>
   </head>
   <body>
-    <nav>
-      <div class="navbar">
-        <div class="logo">
-          <a href="{% url 'home:home' %}">Albertop Hotel</a>
+    <header>
+      <nav>
+        <div
+          class="navbar"
+          style="background: transparent; backdrop-filter: blur(10px)"
+        >
+          <div class="logo">
+            <a href="{% url 'home:home' %}">Albertop Hotel</a>
+          </div>
+          <div>
+            <span class="signin">
+              <a href="{% url 'customer:login' %}">Sign in</a> </span
+            ><span class="book"
+              ><a href="{% url 'rooms:rooms' %}">Book now</a></span
+            >
+          </div>
         </div>
-        <div>
-          <span class="signin">
-            <a href="{% url 'customer:login' %}">Sign in</a> </span
-          ><span class="book"
-            ><a href="{% url 'rooms:rooms' %}">Book now</a></span
-          >
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
     <div>{% block home %} {% endblock %}</div>
     <div>{% block rooms %} {% endblock %}</div>
     <div>{% block standard %} {% endblock %}</div>
+    <div>{% block viproom %} {% endblock %}</div>
   </body>
 </html>
