@@ -58,6 +58,24 @@
     {% endif %}
   </div>
 </div>
+<div style="text-align: center">
+  <button
+    type="submit"
+    style="margin: 20px; padding: 20px; width: 1000px"
+  >
+    <a
+      style="
+        text-decoration: none;
+        font-size: 50px;
+        color: black;
+        cursor: pointer;
+      "
+      href=""
+    >
+      Book Now</a
+    >
+  </button>
+</div>
 <div style="padding: 20px; display: flex; justify-content: center">
   <video
     width="90%"
@@ -67,9 +85,5 @@
     >
   </video>
 </div>
-<div>
-  <button type="submit">
-    <a href="{% url 'booking:bookroom' %}"> Book Now</a>
-  </button>
-</div>
+
 {% endblock %}

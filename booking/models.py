@@ -1,37 +1,21 @@
+import uuid
 from django.db import models
 from django.contrib.auth.models import User
-from rooms.models import Standard, Suite, VIP
-import uuid
 
 # Create your models here.
-class Rooms(models.Model):
-    name = models.CharField(max_length=255)
+class Book(models.Model):
+    room_type_choices = [
+        ('suite', 'Suite'),
+        ('vip', 'VIP'),
+        ('standard', 'Standard'),
+    ]
 
-class Standard(models.Model):
-    standard = models.ForeignKey(Standard, on_delete=models.CASCADE, default=None)
-    room = models.OneToOneField(Rooms, on_delete=models.CASCADE)
-
-class Suite(models.Model):
-    suite = models.ForeignKey(Suite, on_delete=models.CASCADE, default=None)
-    room = models.OneToOneField(Rooms, on_delete=models.CASCADE)
-
-class VIP(models.Model):
-    vip = models.ForeignKey(VIP, on_delete=models.CASCADE, default=None)
-    room = models.OneToOneField(Rooms, on_delete=models.CASCADE)   
-
-class Booking(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    room = models.ForeignKey(Rooms, on_delete=models.CASCADE)
-    check_in = models.DateField()
-    check_out = models.DateField()
-    number_of_rooms = models.PositiveIntegerField(default=1)
-    booking_code = models.CharField(max_length=10, blank=True)
+    customer_name = models.ForeignKey(User, on_delete=models.CASCADE)
+    room_type = models.CharField(max_length=10, choices=room_type_choices)
+    checkin = models.DateField()
+    checkout = models.DateField()
+    booking_code = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    number_of_rooms = models.IntegerField(default=1)
 
     def __str__(self):
-        return f'Booking for {self.room} successful from {self.checkIn} to {self.checkout}'
-    
-    def save(self, *args, **kwargs):
-        if not self.booking_code:
-            self.booking_code = str(uuid.uuid4()) #generate code
-        super().save(*args, **kwargs)
-    
+        print(f'Booking of {self.room_type} done. Your booking code is {self.booking_code}')
