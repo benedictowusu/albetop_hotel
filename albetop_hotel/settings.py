@@ -29,7 +29,6 @@ INSTALLED_APPS = [
     "django_browser_reload",
     'home',
     'rooms',
-    'customer',
     'booking',
 ]
 

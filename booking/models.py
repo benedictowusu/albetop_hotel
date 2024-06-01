@@ -1,6 +1,5 @@
 import uuid
 from django.db import models
-from django.contrib.auth.models import User
 
 # Create your models here.
 class Book(models.Model):
@@ -10,7 +9,8 @@ class Book(models.Model):
         ('standard', 'Standard'),
     ]
 
-    customer_name = models.ForeignKey(User, on_delete=models.CASCADE)
+    customer_name = models.CharField(max_length=100)
+    customer_email = models.EmailField()
     room_type = models.CharField(max_length=10, choices=room_type_choices)
     checkin = models.DateField()
     checkout = models.DateField()
