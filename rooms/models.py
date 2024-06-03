@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 
 # Create your models here.
@@ -58,3 +59,21 @@ class Standard(models.Model):
         for i in range(200):
             Standard.objects.create(
                 name=f'Standard Room {i+1}')
+            
+class Book(models.Model):
+    room_choice = [
+        ('suite', 'suite'),
+        ('vip', 'VIP'),
+        ('standard', 'Standard')
+    ]
+    customer_name = models.CharField(max_length=255)
+    customer_email = models.EmailField()
+    room_type = models.CharField(max_length=10, choices=room_choice)
+    check_in = models.DateField()
+    check_out = models.DateField()
+    number_of_rooms = models.IntegerField(default=1)
+    booking_code = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    
+
+    def __str__(self):
+        return f'Name Of Customer = {self.customer_name} || Email = {self.customer_email} || Booking code = {self.booking_code}'
