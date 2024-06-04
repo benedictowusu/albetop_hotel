@@ -69,8 +69,8 @@ class Book(models.Model):
     customer_name = models.CharField(max_length=255)
     customer_email = models.EmailField()
     room_type = models.CharField(max_length=10, choices=room_choice)
-    check_in = models.DateField()
-    check_out = models.DateField()
+    check_in = models.DateField(help_text='yyyy-mm-dd')
+    check_out = models.DateField(help_text='yyyy-mm-dd')
     number_of_rooms = models.IntegerField(default=1)
     booking_code = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     

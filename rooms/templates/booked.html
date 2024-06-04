@@ -1,11 +1,11 @@
 {% extends 'base.html' %}{% block book_confirmation %}
 <div>
-    <h1>Booking Confirmation</h1>
-    <p>Thank you for your booking, {{ booking.customer_name }}!</p>
-    <p>Your booking number is: {{ booking.booking_number }}</p>
-    <p>Room Type: {{ booking.get_room_type_display }}</p>
-    <p>Check-in: {{ booking.check_in }}</p>
-    <p>Check-out: {{ booking.check_out }}</p>
-    <p>Number of rooms: {{ booking.number_of_rooms }}</p>
+  <h1>Booking Confirmation</h1>
+  <p>Thank you for your booking, {{ booked.customer_name }}!</p>
+  <p>Your booking number is: {{ booked.booking_code }}</p>
+  <p>Room Type: {{ booked.get_room_type_display }}</p>
+  <p>Check-in: {{ booked.check_in }}</p>
+  <p>Check-out: {{ booked.check_out }}</p>
+  <p>Number of rooms: {{ booked.number_of_rooms }}</p>
 </div>
 {% endblock %}
