@@ -76,4 +76,4 @@ class Book(models.Model):
     
 
     def __str__(self):
-        return f'Name Of Customer = {self.customer_name} || Email = {self.customer_email} || Booking code = {self.booking_code}'
+        return f'Name Of Customer = {self.customer_name} || Email = {self.customer_email} || Room = {self.room_type} || Booking code = {self.booking_code}'
