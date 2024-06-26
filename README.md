@@ -10,22 +10,22 @@ MySQL (with a user and database created)
 1. Setting Up Django
 First, you need to install Django. You can do this using pip:
 
-``pip install django
+`pip install django`
 
 2. Installing MySQL Client
 To use MySQL as your database backend, you need to install mysqlclient:
 
-``pip install mysqlclient
+`pip install mysqlclient`
 
 3. Enabling Lazy Loading with Django Browser Reload
 To enable lazy loading in your Django project, you need to install django-browser-reload:
 
-``pip install django-browser-reload
+`pip install django-browser-reload`
 
 ## Running the Project
 To run the Django development server, use the following command:
 
-``python manage.py runserver
+`python manage.py runserver`
 
 Visit http://localhost:8000 in your web browser to see your hotel booking application in action.
 
