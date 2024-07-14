@@ -7,3 +7,4 @@ class BookingForm(ModelForm):
         model = Book
         # Display all model instances in BOOK except the booking_code
         exclude = ['booking_code']
+       

@@ -7,39 +7,219 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
+    <title>Albetop Hotel</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="css/styles.css"
+    />
+    <link
+      rel="icon"
+      href="images/icon.png"
+    />
+    <!-- Include Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Document</title>
     <link
       rel="stylesheet"
       href="{% static 'styles.css' %}"
     />
-    <script
-      src="https://kit.fontawesome.com/9fb02a6b6b.js"
-      crossorigin="anonymous"
-    ></script>
   </head>
   <body>
-    <header>
-      <nav>
-        <div
-          class="navbar"
-          style="background: transparent; backdrop-filter: blur(10px)"
-        >
-          <div class="logo">
-            <a href="{% url 'home:home' %}">Albertop Hotel</a>
-          </div>
-          <div>
-            <span class="book"
-              ><a href="{% url 'rooms:rooms' %}">Book now</a></span
-            >
-          </div>
-        </div>
-      </nav>
-    </header>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div>
+        <h1 style="color: white">Albertop Hotel</h1>
+      </div>
+      <div
+        class="collapse navbar-collapse"
+        id="myNavbar"
+        style="margin-top: 10px"
+      >
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li class="dropdown">
+            <a
+              class="dropdown-toggle"
+              data-toggle="dropdown"
+              href="#"
+              >Rooms<span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li><a href="#standard">Standard</a></li>
+              <li><a href="#vip">VIP</a></li>
+              <li><a href="#suite">Suite</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact Us</a></li>
+          <a
+            href="{% url 'rooms:book_room' %}"
+            class="btn btn-danger navbar-btn"
+            >Book Now</a
+          >
+        </ul>
+      </div>
+    </nav>
     <div>{% block home %} {% endblock %}</div>
     <div>{% block rooms %} {% endblock %}</div>
     <div>{% block standard %} {% endblock %}</div>
     <div>{% block viproom %} {% endblock %}</div>
     <div>{% block book_room %} {% endblock %}</div>
     <div>{% block book_confirmation %} {% endblock %}</div>
+
+    <!-- footer -->
+    <footer
+      class="custom-footer"
+      style="padding: 0 200px"
+    >
+      <div class="footer-container">
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Contact Us</h2>
+            <ul class="list-unstyled">
+              <li>
+                <i
+                  class="fa fa-map-marker"
+                  aria-hidden="true"
+                ></i>
+                Albetop Hotel, P. O. Box 7, Sunyani, Ghana
+              </li>
+              <li>
+                <i
+                  class="fa fa-mobile"
+                  aria-hidden="true"
+                ></i>
+                +233 209705826 / +233 501378473
+              </li>
+              <li>
+                <i
+                  class="fa fa-envelope"
+                  aria-hidden="true"
+                ></i
+                ><a href="mailto:aotwum.at@outlook.com"> hotel@albetop.com</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h2>Menu Link</h2>
+            <ul class="list-unstyled">
+              <li class="active">
+                <a
+                  href="#"
+                  class="text-white"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-white"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#rooms"
+                  class="text-white"
+                  >Our Room</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-white"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h2>Newsletter</h2>
+            <form class="bottom_form">
+              <input
+                class="form-control mb-2"
+                placeholder="Enter your email"
+                type="text"
+                name="email"
+              /><br />
+              <button class="btn btn-success">Subscribe</button>
+            </form>
+            <ul class="social_icon list-inline mt-3">
+              <li class="list-inline-item">
+                <a
+                  href="#"
+                  class="text-white"
+                  ><i
+                    class="fa fa-facebook"
+                    aria-hidden="true"
+                  ></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a
+                  href="#"
+                  class="text-white"
+                  ><i
+                    class="fa fa-twitter"
+                    aria-hidden="true"
+                  ></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a
+                  href="#"
+                  class="text-white"
+                  ><i
+                    class="fa fa-linkedin"
+                    aria-hidden="true"
+                  ></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a
+                  href="#"
+                  class="text-white"
+                  ><i
+                    class="fa fa-youtube-play"
+                    aria-hidden="true"
+                  ></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="text-center py-3">
+        <div class="footer-container">
+          <div class="row">
+            <div class="col-12">
+              <p>&copy; 2024 Albetop Hotel. All Rights Reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
