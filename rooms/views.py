@@ -5,7 +5,7 @@ from .forms import BookingForm
 # Create your views here.
 def suite(request):
     # view function to fetch details from the standard room mode
-    suiteroom = Suite.objects.all()
+    suiteroom = Suite.objects.all().first()
     return render(request, 'suite.html', {'suiterooms': suiteroom} )
 
 def vip(request):

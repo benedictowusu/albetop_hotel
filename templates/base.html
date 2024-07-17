@@ -40,6 +40,10 @@
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/9fb02a6b6b.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Document</title>
     <link
       rel="stylesheet"
@@ -50,7 +54,13 @@
     <!-- NAVIGATION BAR -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div>
-        <h1 style="color: white">Albertop Hotel</h1>
+        <h1 style="color: white">
+          <a
+            style="text-decoration: none; color: white"
+            href="{% url 'home:home' %}"
+            >Albertop Hotel</a
+          >
+        </h1>
       </div>
       <div
         class="collapse navbar-collapse"
@@ -58,7 +68,7 @@
         style="margin-top: 10px"
       >
         <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="#">Home</a></li>
+          <li class="active"><a href="{% url 'home:home' %}">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li class="dropdown">
             <a
@@ -68,9 +78,9 @@
               >Rooms<span class="caret"></span
             ></a>
             <ul class="dropdown-menu">
-              <li><a href="#standard">Standard</a></li>
-              <li><a href="#vip">VIP</a></li>
-              <li><a href="#suite">Suite</a></li>
+              <li><a href="{% url 'rooms:standard' %}">Standard</a></li>
+              <li><a href="{% url 'rooms:vip' %}">VIP</a></li>
+              <li><a href="{% url 'rooms:suite' %}">Suite</a></li>
             </ul>
           </li>
           <li><a href="#contact">Contact Us</a></li>
@@ -86,6 +96,7 @@
     <div>{% block rooms %} {% endblock %}</div>
     <div>{% block standard %} {% endblock %}</div>
     <div>{% block viproom %} {% endblock %}</div>
+    <div>{% block suiteroom %} {% endblock %}</div>
     <div>{% block book_room %} {% endblock %}</div>
     <div>{% block book_confirmation %} {% endblock %}</div>
 

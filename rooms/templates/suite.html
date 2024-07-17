@@ -1,5 +1,65 @@
-{% extends 'base.html' %}{% block suitepage %}
-<div>Welcome to the {{ Suite }}</div>
+{% extends 'base.html' %}{% block suiteroom %}
+<div
+  style="
+    background-image: url('/static/suiteroom.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 700px;
+  "
+>
+  <div style="background-color: black; height: 700px; opacity: 0.3">
+    <div>
+      <h1
+        style="
+          text-align: center;
+          font-size: 50px;
+          font-weight: bolder;
+          color: rgb(255, 255, 255);
+          padding-top: 250px;
+        "
+      >
+        Suite Room
+      </h1>
+    </div>
+  </div>
+</div>
+<div>
+  <div style="display: flex; flex-direction: column; justify-content: center">
+    <div><h1 style="text-align: center">Room Description</h1></div>
+    <div>
+      <p style="text-align: center; margin: 50px 50px">
+        Experience comfort and convenience at Albertop Hotel's Suite rooms,
+        featuring plush beds and modern amenities. Refresh in sleek bathrooms
+        with premium toiletries, and relax in a welcoming space adorned with
+        stylish décor. Book your stay today for a simple, comfortable, and
+        memorable experience.
+      </p>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: center">
+    {% if suiterooms %}
+    <div class="facilities">
+      <div style="display: flex; flex-direction: column">
+        <div style="text-align: center">
+          <i class="fa-solid fa-money-check-dollar"></i>
+        </div>
+        <div style="text-align: center">${{ suiterooms.pricepernight }}</div>
+      </div>
+    </div>
+    <div class="facilities">
+      <div style="display: flex; flex-direction: column">
+        <div style="text-align: center">
+          <i class="fa-solid fa-bed"></i>
+        </div>
+        <div style="text-align: center">
+          {{ suiterooms.typeofbedinmastersbedroom}}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
 <div style="text-align: center">
   <button
     type="submit"
@@ -12,10 +72,19 @@
         color: black;
         cursor: pointer;
       "
-      href=""
+      href="{% url 'rooms:book_room' %}"
     >
       Book Now</a
     >
   </button>
+</div>
+<div style="padding: 20px; display: flex; justify-content: center">
+  <video
+    width="90%"
+    controls
+  >
+    <source src="/static/Suite.mp4" />
+    >
+  </video>
 </div>
 {% endblock %}
