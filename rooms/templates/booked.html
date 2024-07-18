@@ -1,5 +1,8 @@
 {% extends 'base.html' %}{% block book_confirmation %}
-<div>
+<div
+  style="font-size: larger; text-align: center; padding: 150px 50px"
+  id="bookingSuccess"
+>
   <h1>Booking Confirmation</h1>
   <p>Thank you for your booking, {{ booked.customer_name }}!</p>
   <p>Your booking number is: {{ booked.booking_code }}</p>
@@ -7,5 +10,24 @@
   <p>Check-in: {{ booked.check_in }}</p>
   <p>Check-out: {{ booked.check_out }}</p>
   <p>Number of rooms: {{ booked.number_of_rooms }}</p>
+  <button
+    type="button"
+    class="btn btn-primary"
+    onclick="printBookingConfirmation()"
+  >
+    Save Receipt
+  </button>
 </div>
+<script>
+  function printBookingConfirmation() {
+    var printContents = document.getElementById("bookingSuccess").innerHTML;
+    var originalContents = document.body.innerHTML;
+
+    document.body.innerHTML = printContents;
+
+    window.print();
+
+    document.body.innerHTML = originalContents;
+  }
+</script>
 {% endblock %}
