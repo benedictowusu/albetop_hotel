@@ -1,6 +1,6 @@
 {% extends 'base.html' %}{% block book_confirmation %}
 <div
-  style="font-size: larger; text-align: center; padding: 150px 50px"
+  style="font-size: larger; text-align: center; padding: 50px 50px 50px 20px"
   id="bookingSuccess"
 >
   <h1>Booking Confirmation</h1>
@@ -10,6 +10,8 @@
   <p>Check-in: {{ booked.check_in }}</p>
   <p>Check-out: {{ booked.check_out }}</p>
   <p>Number of rooms: {{ booked.number_of_rooms }}</p>
+</div>
+<div style="text-align: center; margin-bottom: 100px;">
   <button
     type="button"
     class="btn btn-primary"

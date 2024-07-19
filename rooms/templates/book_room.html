@@ -1,6 +1,6 @@
 {% extends 'base.html' %}{% block book_room %}
-<div>
-  <h1>Book a room</h1>
+<div style="padding: 80px 0">
+  <h1 style="font-size: 50px">Book a room</h1>
   <form
     method="POST"
     action="{% url 'rooms:book_room' %}"
